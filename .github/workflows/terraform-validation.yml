@@ -1,0 +1,34 @@
+---
+name: Terraform Validate
+
+on: [push, pull_request]
+
+jobs:
+  build:
+    name: Terraform Validate
+    runs-on: ubuntu-latest
+
+    steps:
+      # Important: This sets up your GITHUB_WORKSPACE environment variable
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      # Setup Terraform CLI
+      - name: Run setup-terraform
+        uses: hashicorp/setup-terraform@v3
+
+      # Check formatting and style of Terraform files
+      - name: Terraform fmt
+        id: fmt
+        run: terraform fmt -check
+        continue-on-error: true
+
+      # Initialize Terraform
+      - name: Terraform Init
+        id: init
+        run: terraform init
+
+      # Validate Terraform files
+      - name: Terraform Validate
+        id: validate
+        run: terraform validate -no-color

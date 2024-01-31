@@ -1,0 +1,139 @@
+---
+name: Bug Report
+description: Create a bug report to help us improve
+title: "[Bug]: "
+labels: ["bug", "triage"]
+projects: ["octo-org/1", "octo-org/44"]
+assignees:
+  - ironwolphern
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for taking the time to fill out this bug report!
+  - type: input
+    id: contact-name
+    attributes:
+      label: Contact Name
+      description: What is your name?
+      placeholder: ex. John Doe
+    validations:
+      required: false
+  - type: input
+    id: contact-email
+    attributes:
+      label: Contact Email
+      description: How can we get in touch with you if we need more info?
+      placeholder: ex. email@example.com
+    validations:
+      required: false
+  - type: textarea
+    id: expected-behavior
+    attributes:
+      label: Expected Behavior
+      description: Also tell us, what did you expect to happen?
+      placeholder: Tell us what you expect!
+      value: "A expected result!"
+    validations:
+      required: true
+  - type: textarea
+    id: actual-behavior
+    attributes:
+      label: Actual Behavior
+      description: Also tell us, what happen?
+      placeholder: Tell us what you see!
+      value: "A bug happened!"
+    validations:
+      required: true
+  - type: textarea
+    id: steps-to-reproduce
+    attributes:
+      label: Steps to Reproduce the Problem
+      description: Also tell us, how can we reproduce this bug?
+      placeholder: Tell us how to reproduce!
+      value: |
+        1. Step 1
+        2. Step 2
+        3. Step 3
+        ...
+    validations:
+      required: true
+  - type: input
+    id: operating-system
+    attributes:
+      label: Operating System
+      description: What operating system are you using?
+      placeholder: ex. Ubuntu 18.04
+    validations:
+      required: false
+  - type: input
+    id: terraform-version
+    attributes:
+      label: Terraform Version
+      description: What version of Terraform are you using?
+      placeholder: ex. 1.1.0
+    validations:
+      required: false
+  - type: textarea
+    id: providers-modules
+    attributes:
+      label: Providers and Modules with Versions
+      description: What providers and modules are you using with versions?
+      placeholder: ex. vsphere = 2.0.0
+    validations:
+      required: false
+  - type: textarea
+    id: variables
+    attributes:
+      label: Variables Used
+      description: What variables are you using?
+      placeholder: "ex. example_email:"
+      value: |
+        ...
+    validations:
+      required: true
+  - type: textarea
+    id: logs
+    attributes:
+      label: Relevant log output
+      description: Please copy and paste any relevant log output. This will be automatically formatted into code.
+      render: shell
+    validations:
+      required: false
+  - type: textarea
+    id: solution
+    attributes:
+      label: Possible Solution
+      description: If you have a possible solution, please describe it.
+      placeholder: Tell us your solution!
+      value: A possible solution!
+    validations:
+      required: false
+  - type: textarea
+    id: details
+    attributes:
+      label: Detailed Description
+      description: Please provide a detailed description of the bug.
+      placeholder: Tell us more!
+      value: A detailed description!
+    validations:
+      required: false
+  - type: textarea
+    id: implementation
+    attributes:
+      label: Possible Implementation
+      description: If you have a possible implementation, please describe it.
+      placeholder: Tell us your implementation!
+      value: A possible implementation!
+    validations:
+      required: false
+  - type: checkboxes
+    id: terms
+    attributes:
+      label: Code of Conduct
+      description: |
+        By submitting this issue,
+        you agree to follow our [Code of Conduct](https://example.com)
+      options:
+        - label: I agree to follow this project's Code of Conduct
+          required: true

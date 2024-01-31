@@ -1,0 +1,7 @@
+# adding github settings to show correct language
+*.json linguist-detectable=true
+*.yml linguist-detectable=true
+*.tf linguist-detectable=true
+*.tfvars linguist-detectable=true
+*.hcl linguist-detectable=true
+*.md linguist-documentation
