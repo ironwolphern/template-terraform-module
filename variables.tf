@@ -2,8 +2,8 @@
 # Variables for the module (Input Variables)
 #------------------------------------------------------------------------------
 variable "input_var" {
-  description = "Description of the input variable."
   type        = string # string, number, bool, list, map, set, object, tuple, any
+  description = "Description of the input variable."
   default     = "value"
   nullable    = false
   validation {
