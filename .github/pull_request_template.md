@@ -1,42 +1,58 @@
-# Related Issue/Addition to code
+# Pull Request
 
-Please delete options that are not relevant.
+## 📋 Descripción
 
-- Fixes #
-- Issue/Addition to code.
+Breve descripción de los cambios realizados.
 
-## Type of change
+## 🔗 Issue Relacionado
 
-Please delete options that are not relevant.
+Cierra #(número del issue)
 
-- [ ] Bug fix (non-breaking change which fixes an issue)
-- [ ] New feature (non-breaking change which adds functionality)
-- [ ] Breaking change (fix or feature that would cause existing functionality to not work as expected)
-- [ ] This change requires a documentation update
+## 🧪 Tipo de Cambio
 
-## Proposed Changes
+- [ ] 🐛 Bug fix (cambio que no rompe funcionalidad y arregla un issue)
+- [ ] ✨ Nueva característica (cambio que no rompe funcionalidad y agrega funcionalidad)
+- [ ] 💥 Breaking change (fix o feature que podría hacer que funcionalidad existente no funcione como se esperaba)
+- [ ] 📚 Actualización de documentación
+- [ ] 🔧 Refactoring (cambio de código que no arregla un bug ni agrega una característica)
+- [ ] ⚡ Mejora de rendimiento
+- [ ] 🧪 Agrega o actualiza tests
 
-- change 1
-- change 2
+## 🧪 Testing
 
-## Additional Info
+Describe las pruebas que realizaste para verificar tus cambios.
 
-- any additional info for context
+- [ ] Tests unitarios pasan
+- [ ] Tests de integración pasan
+- [ ] Linting pasa
+- [ ] Validaciones de seguridad pasan
+- [ ] Documentación actualizada
 
-## Checklist
+## 📋 Checklist
 
-- [ ] My code follows the style guidelines of this project and have read CONTRIBUTING.md
-- [ ] I have performed a self-review of my own code
-- [ ] I have commented my code, particularly in hard-to-understand areas
-- [ ] I have made corresponding changes to the documentation
-- [ ] My changes generate no new warnings
-- [ ] I have added tests that prove my fix is effective or that my feature works
-- [ ] New and existing unit tests pass locally with my changes
-- [ ] Any dependent changes have been merged and published in downstream modules
-- [ ] I have checked my code and corrected any misspellings
+- [ ] Mi código sigue las convenciones de estilo de este proyecto
+- [ ] He realizado una auto-revisión de mi código
+- [ ] He comentado mi código, particularmente en áreas difíciles de entender
+- [ ] He realizado los cambios correspondientes a la documentación
+- [ ] Mis cambios no generan nuevas advertencias
+- [ ] He agregado tests que prueban que mi fix es efectivo o que mi característica funciona
+- [ ] Tests unitarios nuevos y existentes pasan localmente con mis cambios
+- [ ] Cualquier cambio dependiente ha sido fusionado y publicado en módulos downstream
 
-## Screenshots
+## 📸 Capturas de Pantalla (si aplica)
 
-| Original | Updated |
-|:-------------------------:|:------------------------:|
-| **original screenshot** | **updated screenshot** |
+Agrega capturas de pantalla para ayudar a explicar tu cambio.
+
+## 🔄 Configuración de Terraform
+
+```hcl
+# Ejemplo de configuración que demuestra el cambio
+module "example" {
+  source = "..."
+  # ...
+}
+```
+
+## ℹ️ Información Adicional
+
+Cualquier información adicional que pueda ser útil para los revisores.

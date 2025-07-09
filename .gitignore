@@ -1,71 +1,73 @@
-# Local .terraform directories
+# Ignorar archivos de Terraform
 **/.terraform/*
-
-# .tfstate files
 *.tfstate
 *.tfstate.*
-
-# Crash log files
 crash.log
 crash.*.log
-
-# Exclude all .tfvars files, which are likely to contain sensitive data, such as
-# password, private keys, and other secrets. These should not be part of version
-# control as they are data points which are potentially sensitive and subject
-# to change depending on the environment.
 *.tfvars
 *.tfvars.json
-
-# Ignore override files as they are usually used to override resources locally and so
-# are not checked in
 override.tf
 override.tf.json
 *_override.tf
 *_override.tf.json
-
-# Include override files you do wish to add to version control using negated pattern
-# !example_override.tf
-
-# Include tfplan files to ignore the plan output of command: terraform plan -out=tfplan
-# example: *tfplan*
-
-# Ignore CLI configuration files
 .terraformrc
 terraform.rc
 
-# Ignore lock files
-*.lock.hcl
+# Ignorar archivos de plan de Terraform
+*.tfplan
 
-*.log
-*.log.*
-*.iso
-*.box
-packer_cache
-*.retry
-.vagrant
+# Ignorar archivos CLI de Terraform
+.terraform.lock.hcl
 
-# VSCode
-.vscode
+# Ignorar archivos de Go
+# Si hay módulos Go para testing
+/test/vendor/
+/test/*.test
 
-# Byte-compiled / optimized / DLL files
-__pycache__/
-*.py[cod]
-*$py.class
-
-# DS_Store
-.DS_Store
-._*
-
-# Linux Editors
-*~
-\#*\#
-/.emacs.desktop
-/.emacs.desktop.lock
-.elc
-auto-save-list
-tramp
-.\#*
+# Ignorar archivos IDE
+.vscode/
+.idea/
 *.swp
 *.swo
-rh-creds.env
-travis.env
+*~
+
+# Ignorar archivos del sistema operativo
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Ignorar archivos de logs
+*.log
+
+# Ignorar archivos temporales
+*.tmp
+*.temp
+
+# Ignorar archivos de backup
+*.backup
+*.bak
+*.orig
+
+# Ignorar archivos de secrets
+.secrets.baseline
+secrets.auto.tfvars
+.env
+.envrc
+
+# Ignorar archivos de coverage
+coverage.out
+coverage.html
+
+# Ignorar archivos de herramientas
+.tflint.hcl.bak
+.terraform-docs.yml.bak
+
+# Ignorar directorios de dependencias de Node.js (para semantic-release)
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*

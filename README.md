@@ -1,74 +1,132 @@
-# template-terraform-module
+# Terraform Module Template
 
-:construction: ***DEVELOPING*** :construction:
+Este es un template para crear módulos de Terraform siguiendo las mejores prácticas de desarrollo, documentación, seguridad y testing.
 
-A brief description of the terraform module goes here.
+## 🚀 Características
 
-## Compatibility
+- ✅ Estructura estándar de módulo Terraform
+- ✅ Documentación automática con terraform-docs
+- ✅ Validación y linting con pre-commit hooks
+- ✅ Análisis de seguridad con Checkov y TFSec
+- ✅ Testing con Terratest
+- ✅ CI/CD con GitHub Actions
+- ✅ Versionado semántico automático
+- ✅ Ejemplos de uso completos
 
-This module is meant for use with Terraform 0.13+ and tested using Terraform 1.0+. If you find incompatibilities using Terraform >=0.13, please open an issue.
+## 📁 Estructura del Proyecto
 
-## Features
-
-1. ...
-2. ...
-
-## Usage
-
-Basic usage of this module is as follows:
-
-```hcl
-module "module_name" {
-  source                    = "path/to/module"
-  name                      = "myproject"
-}
+```
+.
+├── .github/                    # GitHub Actions workflows
+│   ├── workflows/
+│   │   ├── ci.yml             # Continuous Integration
+│   │   ├── release.yml        # Automated releases
+│   │   └── security.yml       # Security scanning
+│   ├── ISSUE_TEMPLATE/        # Issue templates
+│   ├── PULL_REQUEST_TEMPLATE.md
+│   └── dependabot.yml         # Dependency updates
+├── .pre-commit-config.yaml    # Pre-commit hooks configuration
+├── .terraform-docs.yml        # terraform-docs configuration
+├── .tflint.hcl               # TFLint configuration
+├── .checkov.yml              # Checkov configuration
+├── examples/                  # Usage examples
+│   ├── complete/             # Complete example
+│   └── simple/               # Simple example
+├── test/                     # Tests
+│   ├── terraform_test.go     # Terratest tests
+│   └── go.mod               # Go module for testing
+├── main.tf                   # Main Terraform configuration
+├── variables.tf              # Input variables
+├── outputs.tf                # Output values
+├── versions.tf               # Provider requirements
+├── locals.tf                 # Local values (if needed)
+├── data.tf                   # Data sources (if needed)
+├── README.md                 # Module documentation
+├── CHANGELOG.md              # Change log
+├── LICENSE                   # License file
+└── Makefile                  # Common tasks automation
 ```
 
-<!-- BEGINNING OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
-## Requirements
+## 🛠️ Uso del Template
 
-| Name | Version |
-|------|---------|
-| terraform | >= 1.0 |
-| provider_name | >= 4.0 |
+### 1. Crear nuevo repositorio desde template
 
-## Providers
+1. Haz clic en "Use this template" en GitHub
+2. Crea tu nuevo repositorio
+3. Clona el repositorio localmente
 
-| Name | Version |
-|------|---------|
-| provider_name | >= 4.0 |
+### 2. Personalizar el módulo
 
-## Modules
+1. Actualiza `README.md` con la descripción de tu módulo
+2. Modifica `main.tf`, `variables.tf` y `outputs.tf` según tu módulo
+3. Actualiza los ejemplos en la carpeta `examples/`
+4. Configura los tests en `test/`
 
-No modules.
+### 3. Configurar desarrollo local
 
-## Resources
+```bash
+# Instalar pre-commit
+pip install pre-commit
+pre-commit install
 
-| Name | Type |
-|------|------|
-| resource_name | resource |
-| data_name | data source |
+# Instalar herramientas de desarrollo (macOS)
+brew install terraform tflint terraform-docs checkov tfsec
 
-## Inputs
+# Ejecutar validaciones
+make validate
+make security
+make docs
+```
 
-| Name | Description | Type | Default | Required |
-|------|-------------|------|---------|:--------:|
-| example_input | Description of this input. | `string` | `` | no |
+## 📋 Comandos Disponibles
 
-## Outputs
+```bash
+# Formatear código
+make fmt
 
-| Name | Description |
-|------|-------------|
-| example_output | Description of this output. |
+# Validar configuración
+make validate
 
-<!-- END OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
+# Ejecutar linting
+make lint
 
-## *License*
+# Análisis de seguridad
+make security
 
-MIT
+# Generar documentación
+make docs
 
-## *Author Information*
+# Ejecutar tests
+make test
 
-This module was created in 2024 by:
+# Limpieza
+make clean
 
-- Fernando Hernández San Felipe (<ironwolphern@outlook.com>)
+# Ejecutar todas las validaciones
+make all
+```
+
+## 🔒 Seguridad
+
+Este template incluye múltiples herramientas de seguridad:
+
+- **Checkov**: Análisis estático de seguridad
+- **TFSec**: Scanner de seguridad específico para Terraform
+- **Dependabot**: Actualizaciones automáticas de dependencias
+- **CODEOWNERS**: Control de revisiones de código
+
+## 📝 Contribuir
+
+1. Fork el proyecto
+2. Crea una rama para tu feature (`git checkout -b feature/AmazingFeature`)
+3. Commit tus cambios (`git commit -m 'Add some AmazingFeature'`)
+4. Push a la rama (`git push origin feature/AmazingFeature`)
+5. Abre un Pull Request
+
+## 📄 Licencia
+
+Este proyecto está licenciado bajo la Licencia MIT - ver el archivo [LICENSE](LICENSE) para más detalles.
+
+## 🤝 Soporte
+
+Si encuentras algún problema o tienes alguna pregunta, por favor abre un [issue](../../issues).

@@ -1,0 +1,73 @@
+name: Release
+
+on:
+  push:
+    branches:
+      - main
+    paths-ignore:
+      - 'README.md'
+      - 'CHANGELOG.md'
+      - '.github/**'
+      - 'docs/**'
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  release:
+    name: Release
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v4
+      with:
+        fetch-depth: 0
+        token: ${{ secrets.GITHUB_TOKEN }}
+
+    - name: Setup Node.js
+      uses: actions/setup-node@v3
+      with:
+        node-version: '18'
+
+    - name: Install dependencies
+      run: |
+        npm install -g semantic-release @semantic-release/changelog @semantic-release/git conventional-changelog-conventionalcommits
+
+    - name: Verify the integrity of provenance attestations and registry signatures for installed dependencies
+      run: npm audit signatures
+
+    - name: Release
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      run: semantic-release
+
+  update-examples:
+    name: Update Examples
+    needs: release
+    runs-on: ubuntu-latest
+    if: needs.release.outputs.new_release_published == 'true'
+    
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v4
+      with:
+        fetch-depth: 0
+
+    - name: Update examples with new version
+      run: |
+        NEW_VERSION="${{ needs.release.outputs.new_release_version }}"
+        find examples -name "*.tf" -exec sed -i "s/source = \".*\"/source = \"github.com\/\${GITHUB_REPOSITORY}?ref=v${NEW_VERSION}\"/" {} \;
+
+    - name: Create Pull Request
+      uses: peter-evans/create-pull-request@v5
+      with:
+        token: ${{ secrets.GITHUB_TOKEN }}
+        commit-message: "chore: update examples to use v${{ needs.release.outputs.new_release_version }}"
+        title: "chore: update examples to use v${{ needs.release.outputs.new_release_version }}"
+        body: |
+          Actualiza los ejemplos para usar la nueva versión v${{ needs.release.outputs.new_release_version }}.
+          
+          Esta es una actualización automática generada por el workflow de release.
+        branch: chore/update-examples-v${{ needs.release.outputs.new_release_version }}

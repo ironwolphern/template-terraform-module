@@ -1,24 +1,24 @@
 output "bucket_id" {
   description = "ID del bucket S3 creado"
-  value       = aws_s3_bucket.example.id
+  value       = module.complete_example.bucket_id
 }
 
 output "bucket_arn" {
   description = "ARN del bucket S3 creado"
-  value       = aws_s3_bucket.example.arn
+  value       = module.complete_example.bucket_arn
 }
 
 output "bucket_domain_name" {
   description = "Nombre de dominio del bucket S3"
-  value       = aws_s3_bucket.example.bucket_domain_name
+  value       = module.complete_example.bucket_domain_name
 }
 
 output "bucket_regional_domain_name" {
   description = "Nombre de dominio regional del bucket S3"
-  value       = aws_s3_bucket.example.bucket_regional_domain_name
+  value       = module.complete_example.bucket_regional_domain_name
 }
 
-output "tags" {
+output "applied_tags" {
   description = "Tags aplicadas a los recursos"
-  value       = local.common_tags
+  value       = module.complete_example.tags
 }

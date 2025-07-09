@@ -1,0 +1,27 @@
+# Code owners for the repository
+# See: https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/about-code-owners
+
+# Global owners
+* @devops-team
+
+# Terraform files
+*.tf @devops-team @terraform-team
+*.tfvars @devops-team @terraform-team
+
+# Documentation
+*.md @devops-team @docs-team
+docs/ @docs-team
+
+# CI/CD
+.github/ @devops-team @ci-cd-team
+Makefile @devops-team
+
+# Security configurations
+.checkov.yml @devops-team @security-team
+.tflint.hcl @devops-team @security-team
+
+# Tests
+test/ @devops-team @qa-team
+
+# Examples
+examples/ @devops-team @docs-team

@@ -1,0 +1,19 @@
+framework:
+  - terraform
+
+skip-check:
+  - CKV_AWS_144  # Ensure that S3 bucket has cross-region replication enabled
+  - CKV_AWS_145  # Ensure that S3 buckets are encrypted with KMS by default
+
+check:
+  - CKV_AWS_18   # Ensure the S3 bucket has access logging configured
+  - CKV_AWS_19   # Ensure all data stored in the S3 bucket is securely encrypted at rest
+  - CKV_AWS_20   # S3 Bucket has an Access Logging policy
+  - CKV_AWS_21   # Ensure all data stored in the S3 bucket have versioning enabled
+  - CKV_AWS_54   # Ensure S3 bucket has block public read enabled
+  - CKV_AWS_55   # Ensure S3 bucket has block public write enabled
+  - CKV_AWS_56   # Ensure S3 bucket has block public policy enabled
+  - CKV_AWS_57   # Ensure S3 bucket has ignore public ACLs enabled
+
+hard-fail-on: high,critical
+soft-fail-on: medium,low
