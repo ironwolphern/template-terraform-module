@@ -15,7 +15,7 @@ jobs:
 
       # Setup Terraform CLI
       - name: Run setup-terraform
-        uses: hashicorp/setup-terraform@v3
+        uses: hashicorp/setup-terraform@v4
 
       # Check formatting and style of Terraform files
       - name: Terraform fmt
